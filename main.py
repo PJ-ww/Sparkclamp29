@@ -8,8 +8,7 @@ from pipeline.audit import write_audit
 
 RUN_ID = "RUN001"
 BUSINESS_DATE = "2026-06-29"
-INPUT_FILE = "data/input/thammasat_workshop_dataset.xlsx"
-
+INPUT_FILE = "data/thammasat_workshop_dataset.xlsx"
 try:
 
     # -----------------------------

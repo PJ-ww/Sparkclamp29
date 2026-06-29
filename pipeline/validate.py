@@ -1,11 +1,9 @@
-python
 import pandas as pd
 
 
 def validate_data():
 
-    raw_file = "data/raw/raw_workshop_data.csv"
-
+    raw_file = "output/raw_workshop_data.csv"
     df = pd.read_csv(raw_file)
 
     errors = []

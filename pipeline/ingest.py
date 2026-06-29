@@ -1,12 +1,14 @@
 import pandas as pd
 
-# อ่าน Excel
-df = pd.read_excel("data/thammasat_workshop_dataset.xlsx")
+def ingest_excel(input_file, business_date, run_id):
+    df = pd.read_excel(input_file)
 
-print(df.head())
-print(df.info())
+    print(df.head())
+    print(df.info())
 
-# Export Raw
-df.to_csv("output/raw_workshop_data.csv", index=False)
+    output_path = "output/raw_workshop_data.csv"
+    df.to_csv(output_path, index=False)
 
-print("Raw layer created")
+    print("Raw layer created")
+
+    return len(df)
