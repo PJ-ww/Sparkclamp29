@@ -1,0 +1,3 @@
+import pandas as pd from pathlib
+import Path def prepare_rag():
+rusted_file = "data/trusted/trusted_student_snapshot.csv" df = pd.read_csv(trusted_file) Path("data/rag").mkdir( parents=True, exist_ok=True ) rag = df[[ "entity_id", "rag_document_title", "rag_document_text", "rag_keywords", "rag_sample_question", "rag_expected_answer_hint", "source_url" ]].copy() rag["document_id"] = ( "DOC_" + rag.index.astype(str) ) rag["chunk_id"] = ( "CHUNK_" + rag.index.astype(str) ) rag.to_csv( "data/rag/rag_excel_document_chunk.csv", index=False ) print("RAG Preparation Success") if __name__ == "__main__": prepare_rag()
